@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asteroids</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background:
+				radial-gradient(ellipse at 50% 20%, #2a1860 0%, transparent 55%),
+				radial-gradient(ellipse at center, #140c28 0%, #07060f 72%);
+			font-family: "Press Start 2P", monospace;
+			color: #e8f0ff;
+			overflow: hidden;
+		}
+
+		#app {
+			text-align: center;
+			padding: 16px;
+		}
+
+		#app .titulo-pagina {
+			font-size: 14px;
+			letter-spacing: 8px;
+			margin-bottom: 14px;
+			color: #7cf7ff;
+			text-shadow: 0 0 10px #3cf, 0 0 24px #c44dff;
+		}
+
+		#phaser-game {
+			width: 800px;
+			height: 600px;
+			max-width: 95vw;
+			max-height: 75vh;
+			margin: 0 auto;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow:
+				0 0 0 3px #3d2a78,
+				0 0 0 6px #7cf7ff44,
+				0 0 48px #6c4dff66,
+				0 18px 50px #000000aa;
+			background: #07060f;
+		}
+
+		#phaser-game canvas {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.dicas {
+			margin-top: 16px;
+			font-size: 9px;
+			line-height: 2;
+			color: #9aa6c7;
+		}
+
+		.dicas span {
+			color: #ffd56a;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div class="titulo-pagina">ASTEROIDS</div>
+		<!-- O jogo Phaser aparece dentro desta caixa -->
+		<div id="phaser-game"></div>
+		<p class="dicas"><span>CONTROLES</span> escolha teclado ou mouse no menu &nbsp;·&nbsp; <span>ESPAÇO</span> também atira</p>
+		<p class="dicas" style="display: none">
+			<span>← →</span> girar &nbsp;·&nbsp;
+			<span>↑</span> acelerar &nbsp;·&nbsp;
+			<span>ESPAÇO</span> atirar
+		</p>
+	</div>
+
+	<!-- Scripts no final do body: assim o #phaser-game ja existe -->
+	<script src="phaser.js"></script>
+	<script src="game.js"></script>
+</body>
+</html>
